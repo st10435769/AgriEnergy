@@ -1,0 +1,102 @@
+﻿
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    .error-message {
+        color: red;
+        margin-top: 10px;
+    }
+
+    .radio-group {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+        .radio-group input[type="radio"] {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .dashboard-containers {
+         display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top:100px;
+    }
+</style>
+
+<div class="dashboard-containers">
+<form method="post">
+    <h1>Login</h1>
+    <label for="userRole">Select Role:</label>
+    <div class="radio-group">
+        <input type="radio" id="roleFarmer" name="role" value="Farmer" checked>
+        <label for="roleFarmer">Farmer</label>
+    </div>
+    <div class="radio-group">
+        <input type="radio" id="roleEmployee" name="role" value="Employee">
+        <label for="roleEmployee">Employee</label>
+    </div>
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="Username" required="true" style="padding: 5px; margin-bottom: 10px; width: 200px; border: 1px solid #ccc; border-radius: 5px;" />
+    <br />
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Password" required style="padding: 5px; margin-bottom: 10px; width: 200px; border: 1px solid #ccc; border-radius: 5px;" />
+    <br />
+    <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Login</button>
+    <br />
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <p style="color: red;">@Model.ErrorMessage</p>
+    }
+</form>
+</div>

@@ -1,0 +1,67 @@
+﻿@page
+@model WebApplication3.Pages.FarmerDashboardModel
+
+
+
+<style>
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    .dashboard-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-tiles-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .dashboard-tile {
+        margin: 10px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+        .dashboard-tile a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .dashboard-tile button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+</style>
+
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Welcome to Farmer Dashboard</h1>
+
+    <div class="dashboard-tiles-container">
+        <div class="dashboard-tile">
+            <a href="/FarmerDashboard/AddProduct">
+                <button>Add Products</button>
+            </a>
+        </div>
+
+        <div class="dashboard-tile">
+            <a href="/FarmerDashboard/ProductSearch">
+                <button>View Products</button>
+            </a>
+        </div>
+    </div>
+</div>

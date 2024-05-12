@@ -1,0 +1,14 @@
+﻿@page
+@model ProductListingModel
+@{
+    ViewData["Title"] = "Product Listing";
+}
+
+<h1>Product Listing</h1>
+
+<ul>
+    @foreach (var product in Model.Products)
+    {
+       // <li>@product.Name - @product.Category</li>
+    }
+</ul>

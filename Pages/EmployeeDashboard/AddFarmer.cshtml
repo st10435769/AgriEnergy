@@ -1,0 +1,98 @@
+﻿@page
+@model AddProductModel
+@{
+}
+
+<style>
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        background-color: #007bff;
+        margin-top: 15px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    .error-message {
+        color: red;
+        margin-top: 10px;
+    }
+
+    .back-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+        .back-button:hover {
+            background-color: #ddd;
+        }
+
+    .dashboard-containers {
+        padding-top: 100px;
+    }
+</style>
+
+<div class="dashboard-containers">
+<form method="post">
+     <label for="farmerName"> Please Add Farmer Details Below:</label>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required maxlength="20" />
+    </div>
+    <div>
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required maxlength="20" />
+    </div>
+    <div>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required maxlength="10" />
+    </div>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Username" required maxlength="20" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Password" required maxlength="10" />
+    </div>
+    <div>
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required maxlength="20" />
+    </div>
+
+    <button type="submit">Save</button>
+        <a href="javascript:history.back()" class="back-button">Back</a>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <p style="color: red;">@Model.ErrorMessage</p>
+        }
+</form>
+</div>
